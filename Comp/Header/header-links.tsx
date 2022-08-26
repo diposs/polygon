@@ -1,15 +1,4 @@
-import {
-    createStyles,
-    Menu,
-    Center,
-    Header,
-    Container,
-    Group,
-    Button,
-    Burger,
-  } from '@mantine/core';
-  import { useDisclosure } from '@mantine/hooks';
-  import { IconChevronDown } from '@tabler/icons';
+import {createStyles} from '@mantine/core';
   
   const HEADER_HEIGHT = 60;
   
@@ -47,29 +36,27 @@ import {
     },
   }));
   
+  const data = [
+    { link:'/', label: 'Dash', description: 'Item with description' },
+    {
+      link: '/why',
+      label: 'Security',
+    },
+    { link:'/about', label: 'Activity' },
+  ];
 
   export function HeaderAction() {
     const { classes } = useStyles();
-  
-      return (
-        <>
+    const items = data.map((item, index) => (
         <a
-          key='home'
-          href='/'
+          key={item.label}
+          href={item.link}
           className={classes.link}
-          onClick={(event) => event.preventDefault()}
         >
-          hhhh
+          {item.label}
         </a>
-        <a
-          key='about'
-          href='/about'
-          className={classes.link}
-          onClick={(event) => event.preventDefault()}
-        >
-        hhha
-        </a>
-        </>
-      );
+      ));
+
+      return <>{items}</>;
 
   }
