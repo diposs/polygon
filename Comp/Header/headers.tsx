@@ -8,6 +8,8 @@ import {
   import { useDisclosure } from '@mantine/hooks';
   import {HeaderAction} from './header-links'
   import useStyles from './header.styles'
+  import Demo from "./test";
+
 
 
 
@@ -28,9 +30,7 @@ import {
           <Group spacing={5} className={classes.links}>
             <HeaderAction />
           </Group>
-          <Button radius="xl" sx={{ height: 30 }}>
-            Get early access
-          </Button>
+          <Demo />
         </Container>
       </Header>
     );
