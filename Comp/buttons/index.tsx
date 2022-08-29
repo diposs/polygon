@@ -60,7 +60,7 @@ const buttons = [
 
 type LoginButtonProps = {
     name: string,
-    onClick: string,
+    onClick: React.MouseEventHandler
     icon: JSX.Element
 }
 
