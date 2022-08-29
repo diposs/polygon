@@ -11,9 +11,6 @@ import {
   import Demo from "./test";
 
 
-
-
-  const HEADER_HEIGHT = 60;
   
   
   export function Headings() {
@@ -21,7 +18,7 @@ import {
     const [opened, { toggle }] = useDisclosure(false);
     return (
         
-      <Header height={HEADER_HEIGHT} sx={{ borderBottom: 0 }} mb={120}>
+      <Header height={60} sx={{ borderBottom: 0 }} mb={120}>
         <Container className={classes.inner} fluid>
           <Group>
             <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
