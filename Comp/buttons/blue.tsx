@@ -50,11 +50,13 @@ const useStyles = createStyles((theme) => ({
 export const ReceiveIconButton = () => {
 const { classes, theme } = useStyles();
     return (
+      <>
        <UnstyledButton onClick={tester} className={classes.item}>
       <IconCreditCard color={theme.colors['indigo'][6]} size={32} />
       <Text size="xs" mt={7}>
         Polygon
       </Text>
     </UnstyledButton>
+</>
     );
 };
