@@ -3,7 +3,7 @@ import { createStyles } from '@mantine/core';
 
 export default createStyles((theme) => ({
     inner: {
-      height: 60px,
+      height: '60px',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
