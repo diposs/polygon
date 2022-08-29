@@ -1,10 +1,9 @@
 import { createStyles } from '@mantine/core';
 
-const HEADER_HEIGHT = 60;
 
 export default createStyles((theme) => ({
     inner: {
-      height: HEADER_HEIGHT,
+      height: '60px',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
