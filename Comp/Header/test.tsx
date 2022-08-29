@@ -6,13 +6,12 @@ import {
   Card,
   Text,
   SimpleGrid,
-  UnstyledButton,
   Anchor,
   Group,
 } from "@mantine/core";
 
 import LoginButton from "../buttons";
-import {buttons} from "../buttons/buttons"
+import { buttons } from "../buttons/buttons";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -50,18 +49,6 @@ function Demo() {
   const [opened, setOpened] = useState(false);
   const { classes, theme } = useStyles();
 
-  // const items = mockdata.map((item) => (
-  //   // <LoginButton>
-
-  //   // </LoginButton>
-  //   // <UnstyledButton key={item.title} className={classes.item}>
-  //   //   <item.icon color={theme.colors[item.color][6]} size={32} />
-  //   //   <Text size="xs" mt={7}>
-  //   //     {item.title}
-  //   //   </Text>
-  //   // </UnstyledButton>
-  // ));
-
   return (
     <>
       <Modal
@@ -80,7 +67,12 @@ function Demo() {
               <LoginButton
                 name={button.title}
                 onClick={button.function}
-                icon={<button.icon size={32} />}
+                icon={
+                  <button.icon
+                    color={theme.colors[button.color][6]}
+                    size={32}
+                  />
+                }
               />
             ))}
           </SimpleGrid>

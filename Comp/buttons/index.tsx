@@ -1,6 +1,5 @@
 import { createStyles, Text, UnstyledButton } from "@mantine/core";
 
-
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
@@ -33,25 +32,17 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-
-
-
 type LoginButtonProps = {
-    name: string,
-    onClick: React.MouseEventHandler
-    icon: JSX.Element
-}
+  name: string;
+  onClick: React.MouseEventHandler;
+  icon: JSX.Element;
+};
 
 const LoginButton = ({ name, onClick, icon }: LoginButtonProps) => {
   const { classes, theme } = useStyles();
   return (
-    <UnstyledButton
-      name={name}
-      onClick={onClick}
-      className={classes.item}
-    >
-        {icon}
-      {/* <Icon.icons color={theme.colors[color][6]} size={32} /> */}
+    <UnstyledButton name={name} onClick={onClick} className={classes.item}>
+      {icon}
       <Text size="xs" mt={7}>
         {name}
       </Text>
