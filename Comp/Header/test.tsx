@@ -63,7 +63,6 @@ function Demo() {
             <Text className={classes.title}>Services</Text>
           </Group>
           <SimpleGrid cols={3} mt="md">
-            {buttons.map((button) => (
               <ReceiveIconButton />
           </SimpleGrid>
         </Card>
