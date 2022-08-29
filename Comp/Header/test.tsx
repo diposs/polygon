@@ -10,19 +10,9 @@ import {
   Anchor,
   Group,
 } from "@mantine/core";
-import {
-  IconCreditCard,
-  IconBuildingBank,
-  IconRepeat,
-  IconReceiptRefund,
-  IconReceipt,
-  IconReceiptTax,
-  IconReport,
-  IconCashBanknote,
-  IconCoin,
-} from "@tabler/icons";
+
 import LoginButton from "../buttons";
-import { EthereumButton } from "../buttons/functions";
+import {buttons} from "../buttons/buttons"
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -86,23 +76,13 @@ function Demo() {
             <Text className={classes.title}>Services</Text>
           </Group>
           <SimpleGrid cols={3} mt="md">
-            <LoginButton
-              name="Ethereum"
-              onClick={EthereumButton}
-              icon={<IconCreditCard color="violet" size={32} />}
-            />
-            <LoginButton
-              name="Ethereum"
-              onClick={EthereumButton}
-              icon={<IconCreditCard color="violet" size={32} />}
-            />
-            {/* <IconCreditCard  /> */}
-            {/* <LoginButton name={} onClick={} />
-            <LoginButton name={} onClick={} />
-            <LoginButton name={} onClick={} />
-            <LoginButton name={} onClick={} />
-            <LoginButton name={} onClick={} />
-            <LoginButton name={} onClick={} /> */}
+            {buttons.map((button) => (
+              <LoginButton
+                name={button.title}
+                onClick={button.function}
+                icon={<button.icon size={32} />}
+              />
+            ))}
           </SimpleGrid>
         </Card>
       </Modal>

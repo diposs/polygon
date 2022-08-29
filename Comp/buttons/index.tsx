@@ -1,17 +1,5 @@
-import { ClassNames } from "@emotion/react";
 import { createStyles, Text, UnstyledButton } from "@mantine/core";
 
-import {
-  IconCreditCard,
-  IconBuildingBank,
-  IconRepeat,
-  IconReceiptRefund,
-  IconReceipt,
-  IconReceiptTax,
-  IconReport,
-  IconCashBanknote,
-  IconCoin,
-} from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -46,17 +34,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 
-const buttons = [
-  { title: "Ethereum", icon: IconCreditCard, color: "violet" },
-  { title: "Polygon", icon: IconBuildingBank, color: "indigo" },
-  { title: "BSC", icon: IconRepeat, color: "blue" },
-  { title: "Optimism", icon: IconReceiptRefund, color: "green" },
-  { title: "Oasis (Emerald)", icon: IconReceipt, color: "teal" },
-  { title: "Aurora", icon: IconReceiptTax, color: "cyan" },
-  { title: "Avax C-Chain", icon: IconReport, color: "pink" },
-  { title: "Near", icon: IconCoin, color: "red" },
-  { title: "Cosmos", icon: IconCashBanknote, color: "orange" },
-];
+
 
 type LoginButtonProps = {
     name: string,
@@ -71,20 +49,14 @@ const LoginButton = ({ name, onClick, icon }: LoginButtonProps) => {
       name={name}
       onClick={onClick}
       className={classes.item}
-    //   icon={icons.icon}
     >
         {icon}
-      {/* <>{Icon.map(icon => (<div ={icon.name} />)} */}
       {/* <Icon.icons color={theme.colors[color][6]} size={32} /> */}
       <Text size="xs" mt={7}>
         {name}
       </Text>
     </UnstyledButton>
   );
-};
-
-const Button = () => {
-  return <div></div>;
 };
 
 export default LoginButton;
