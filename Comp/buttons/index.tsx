@@ -45,15 +45,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const icons = [
-  { icon: IconCreditCard, color: "red" },
-  { icon: IconCreditCard },
-  { icon: IconCreditCard },
-  { icon: IconCreditCard },
-  { icon: IconCreditCard },
-  { icon: IconCreditCard },
-  { icon: IconCreditCard },
-];
 
 const buttons = [
   { title: "Ethereum", icon: IconCreditCard, color: "violet" },
@@ -67,19 +58,22 @@ const buttons = [
   { title: "Cosmos", icon: IconCashBanknote, color: "orange" },
 ];
 
-const Icon = ({ icon }: any) => {
-  return icons;
-};
+type LoginButtonProps = {
+    name: string,
+    onClick: string,
+    icon: JSX.Element
+}
 
-const LoginButton = ({ name, onClick, icon }: any) => {
+const LoginButton = ({ name, onClick, icon }: LoginButtonProps) => {
   const { classes, theme } = useStyles();
   return (
     <UnstyledButton
       name={name}
       onClick={onClick}
       className={classes.item}
-      icon={icons.icon}
+    //   icon={icons.icon}
     >
+        {icon}
       {/* <>{Icon.map(icon => (<div ={icon.name} />)} */}
       {/* <Icon.icons color={theme.colors[color][6]} size={32} /> */}
       <Text size="xs" mt={7}>
