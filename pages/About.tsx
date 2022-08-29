@@ -1,11 +1,13 @@
 import Link from "next/link";
+import LoginButton from "../Comp/buttons";
 import Navbar from "../Comp/Navbar";
 
 const About = () => {
     return (
                 <div className= "Check">
-                    <h1> Always loof</h1>
-                    <Navbar />
+                    <LoginButton />
+                    {/* <h1> Always loof</h1>
+                    <Navbar /> */}
                 </div>
             
     );
