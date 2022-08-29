@@ -64,6 +64,14 @@ function Demo() {
           </Group>
           <SimpleGrid cols={3} mt="md">
               <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
           </SimpleGrid>
         </Card>
       </Modal>
