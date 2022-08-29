@@ -4,11 +4,13 @@ import Navbar from "../Comp/Navbar";
 
 const About = () => {
     return (
+        <>
                 <div className= "Check">
                     <LoginButton />
                     {/* <h1> Always loof</h1>
                     <Navbar /> */}
                 </div>
+            </>
             
     );
 }
