@@ -11,7 +11,7 @@ import {
 } from "@mantine/core";
 
 import LoginButton from "../buttons";
-import { buttons } from "../buttons/buttons";
+import { ReceiveIconButton } from "../buttons/blue";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -63,18 +63,15 @@ function Demo() {
             <Text className={classes.title}>Services</Text>
           </Group>
           <SimpleGrid cols={3} mt="md">
-            {buttons.map((button) => (
-              <LoginButton
-                name={button.title}
-                onClick={button.function}
-                icon={
-                  <button.icon
-                    color={theme.colors[button.color][6]}
-                    size={32}
-                  />
-                }
-              />
-            ))}
+              <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
+            <ReceiveIconButton />
           </SimpleGrid>
         </Card>
       </Modal>
