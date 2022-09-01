@@ -12,6 +12,7 @@ import {
 
 import LoginButton from "../buttons";
 import { ReceiveIconButton } from "../buttons/blue";
+import Wallet from "./wallet/Wallet";
 
 const useStyles = createStyles((theme) => ({
   card: {

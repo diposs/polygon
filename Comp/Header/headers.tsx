@@ -9,6 +9,7 @@ import {
   import {HeaderAction} from './header-links'
   import useStyles from './header.styles'
   import Demo from "./test";
+  import Wallet from "./wallet/Wallet"
 
 
   
@@ -28,6 +29,7 @@ import {
             <HeaderAction />
           </Group>
           <Demo />
+          <Wallet />
         </Container>
       </Header>
     );
