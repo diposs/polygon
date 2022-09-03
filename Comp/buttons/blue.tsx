@@ -10,6 +10,7 @@ import {
   IconCashBanknote,
   IconCoin,
 } from '@tabler/icons';
+import useMetaMask from "../../modules/hooks/useMetaMask";
 
 function tester() {
 alert('ss Button')
@@ -49,9 +50,10 @@ const useStyles = createStyles((theme) => ({
 
 export const ReceiveIconButton = () => {
 const { classes, theme } = useStyles();
+const { connect } = useMetaMask()
     return (
       <>
-       <UnstyledButton onClick={tester} className={classes.item}>
+       <UnstyledButton onClick={connect} className={classes.item}>
       <IconCreditCard color={theme.colors['indigo'][6]} size={32} />
       <Text size="xs" mt={7}>
         Polygon

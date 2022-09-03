@@ -2,11 +2,21 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { injected } from "../../Comp/Header/wallet/injected";
 
-export const MetaMaskContext = React.createContext(null);
+interface AppContextInterface {
+  isActive: boolean;
+  account: string | null | undefined;
+  isLoading: boolean;
+  connect: () => Promise<void>;
+  disconnect: () => Promise<void>;
+}
+
+export const MetaMaskContext = React.createContext<AppContextInterface | null>(
+  null
+);
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 export const MetaMaskProvider = ({ children }: Props) => {
   const { activate, account, library, connector, active, deactivate } =
@@ -35,7 +45,7 @@ export const MetaMaskProvider = ({ children }: Props) => {
     console.log("Connecting to MetaMask wallet");
 
     try {
-      await activate(injected)
+      await activate(injected);
     } catch (e) {
       console.log("Error on connecting:", e);
     }
@@ -43,8 +53,8 @@ export const MetaMaskProvider = ({ children }: Props) => {
 
   //   Disconnect wallet
   const disconnect = async () => {
-    console.log("Deactivating...");
     try {
+      console.log("Deactivating...");
     } catch (e) {
       console.log("Error on disconnecting:", e);
     }
@@ -61,12 +71,21 @@ export const MetaMaskProvider = ({ children }: Props) => {
     [isActive, isLoading]
   );
 
-  return <MetaMaskContext.Provider value={values}>{children}</MetaMaskContext.Provider>
+  return (
+    <MetaMaskContext.Provider value={values}>
+      {children}
+    </MetaMaskContext.Provider>
+  );
 };
 
 export default function useMetaMask() {
-    const ctx = React.useContext(MetaMaskContext)
+  const ctx = React.useContext(MetaMaskContext);
 
-    if (ctx === undefined) throw new Error("useMetaMask hook must be used within a MetaMaskProvider component");
-    
+  if (ctx === undefined) {
+    throw new Error(
+      "useMetaMask hook must be used within a MetaMaskProvider component"
+    );
+  }
+
+  return ctx;
 }
