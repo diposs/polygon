@@ -7,7 +7,7 @@ import Demo from "./test";
 import Wallet from "./wallet/Wallet";
 
 export function Headings() {
-  const { isActive} = useMetaMask()
+  const { isActive} = useMetaMask()??{}
   const { classes } = useStyles();
   const [opened, { toggle }] = useDisclosure(false);
   return (
@@ -25,7 +25,7 @@ export function Headings() {
         <Group spacing={5} className={classes.links}>
           <HeaderAction />
         </Group>
-        {isActive ? <Demo /> : <Wallet />}
+        {isActive ? <Wallet /> : <Demo />}
       </Container>
     </Header>
   );

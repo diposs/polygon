@@ -50,7 +50,7 @@ const useStyles = createStyles((theme) => ({
 
 export const ReceiveIconButton = () => {
 const { classes, theme } = useStyles();
-const { connect } = useMetaMask()
+const { connect } = useMetaMask()??{}
     return (
       <>
        <UnstyledButton onClick={connect} className={classes.item}>
